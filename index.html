@@ -1,1 +1,219 @@
-hi there
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mittho Bakery Shop Nepal | Fresh Cakes, Donuts & More</title>
+
+<meta name="description" content="Mittho Bakery Shop Nepal offers fresh cakes, donuts, pastries, bread and sweets with home delivery across Nepal.">
+<meta name="keywords" content="Bakery Nepal, Cake, Donut, Pastry, Pau Roti, Sweets, Online Bakery Nepal">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff8f2;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(to right, #ff6f61, #ffb88c);
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+/* NAVBAR */
+nav {
+  background: #ff7043;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SECTION */
+section {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* PRODUCT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  color: #e65100;
+  font-weight: bold;
+}
+
+button {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e64a19;
+}
+
+/* DELIVERY */
+.delivery {
+  background: #fff3e0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍰 MITTHO BAKERY SHOP</h1>
+  <p>Fresh • Delicious • Homemade Taste | Nepal 🇳🇵</p>
+</header>
+
+<nav>
+  <a href="#products">Products</a>
+  <a href="#delivery">Delivery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="products">
+  <h2>🛒 Our Bakery Items</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4">
+      <h3>Chocolate Cake</h3>
+      <p class="price">Rs. 800</p>
+      <button onclick="order('Cake')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+      <h3>Donut</h3>
+      <p class="price">Rs. 120</p>
+      <button onclick="order('Donut')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6">
+      <h3>Pau Roti (Bread)</h3>
+      <p class="price">Rs. 80</p>
+      <button onclick="order('Bread')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+      <h3>Pastry</h3>
+      <p class="price">Rs. 150</p>
+      <button onclick="order('Pastry')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0">
+      <h3>Toast</h3>
+      <p class="price">Rs. 60</p>
+      <button onclick="order('Toast')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519869325930-281384150729">
+      <h3>Cherry Bun</h3>
+      <p class="price">Rs. 100</p>
+      <button onclick="order('Cherry Bun')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1599785209707-28c0c37d1f8b">
+      <h3>Sweets Mix</h3>
+      <p class="price">Rs. 300</p>
+      <button onclick="order('Sweets')">Order</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="delivery">
+  <h2>🚚 Home Delivery</h2>
+
+  <div class="delivery">
+    <p>✔ Fast delivery across Nepal</p>
+    <p>✔ Same-day delivery inside Kathmandu Valley</p>
+    <p>✔ Hygienic packaging</p>
+    <p>✔ Order via phone or WhatsApp</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📞 Contact Us</h2>
+  <p>Phone: 98XXXXXXXX</p>
+  <p>Email: mitthobakery@gmail.com</p>
+
+  <a href="https://wa.me/97798XXXXXXXX">
+    <button>Order via WhatsApp</button>
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Mittho Bakery Shop Nepal</p>
+</footer>
+
+<script>
+function order(item) {
+  alert("You selected: " + item + "\\nPlease contact us to confirm your order.");
+}
+</script>
+
+</body>
+</html>
