@@ -3,119 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mittho Bakery Shop Nepal - Full Premium Ecommerce</title>
+<title>Mittho Bakery Shop Nepal</title>
+
+<meta name="description" content="Mittho Bakery Shop Nepal - Fresh cakes, donuts, bread with delivery in Butwal">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ================= GLOBAL THEME ================= */
-:root{
---bg:#0b1220;
---card:#111827;
---primary:#2563eb;
---accent:#60a5fa;
---text:#e5e7eb;
-}
-
 body{
-margin:0;
-font-family:Poppins,sans-serif;
-background:linear-gradient(135deg,#000000,#0b1b3a,#0a2a66);
-color:var(--text);
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0b1220,#1e3a8a);
+  color:#e5e7eb;
 }
 
 header{
-background:linear-gradient(90deg,#0a1f44,#1e3a8a,#2563eb);
-text-align:center;
-padding:40px;
-color:white;
+  text-align:center;
+  padding:50px 20px;
+  background:linear-gradient(90deg,#1e3a8a,#2563eb);
+}
+
+header h1{
+  margin:0;
+  font-size:40px;
+}
+
+header p{
+  margin-top:10px;
+  opacity:0.9;
 }
 
 nav{
-background:#0f2a66;
-padding:12px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:10;
+  text-align:center;
+  padding:12px;
+  background:#1e40af;
+  position:sticky;
+  top:0;
 }
-
 nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a:hover{
+  text-decoration:underline;
 }
 
 .container{
-max-width:1200px;
-margin:auto;
-padding:20px;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
 
 h2{
-text-align:center;
-margin-top:40px;
-color:#93c5fd;
+  text-align:center;
+  color:#93c5fd;
+  margin-top:40px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
 .card{
-background:var(--card);
-padding:15px;
-border-radius:12px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,0.6);
+  background:#111827;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+  transition:0.3s;
+}
+.card:hover{
+  transform:scale(1.05);
 }
 
 .card img{
-width:100%;
-height:160px;
-object-fit:cover;
-border-radius:10px;
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
 .price{
-color:#60a5fa;
-font-weight:bold;
+  color:#60a5fa;
+  font-weight:bold;
 }
 
 button{
-background:var(--primary);
-color:white;
-border:none;
-padding:10px;
-border-radius:6px;
-cursor:pointer;
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+button:hover{
+  background:#1d4ed8;
 }
 
-button:hover{
-background:#1d4ed8;
+.hero{
+  text-align:center;
+  margin-top:20px;
+}
+.hero button{
+  margin-top:10px;
+}
+
+.delivery, .reviews{
+  text-align:center;
+  background:#0f172a;
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
 }
 
 footer{
-background:#020617;
-text-align:center;
-padding:20px;
-margin-top:50px;
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  margin-top:40px;
 }
 
-/* ================= SEARCH ================= */
-.searchBox{
-text-align:center;
-margin:20px;
-}
-
-.searchBox input{
-width:60%;
-padding:10px;
-border-radius:8px;
-border:none;
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:12px 15px;
+  border-radius:50px;
+  text-decoration:none;
 }
 
 </style>
@@ -125,125 +145,122 @@ border:none;
 
 <header>
 <h1>🍰 MITTHO BAKERY SHOP</h1>
-<p>Premium Bakery Experience - Nepal 🇳🇵</p>
+<p>Fresh • Delicious • Homemade Taste | Butwal, Nepal 🇳🇵</p>
 </header>
 
 <nav>
 <a href="#cakes">Cakes</a>
 <a href="#donuts">Donuts</a>
 <a href="#bread">Bread</a>
-<a href="#sweets">Sweets</a>
-<a href="#special">Special</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
-<div class="searchBox">
-<input placeholder="Search bakery items..." onkeyup="searchItems()" id="search">
+<div class="hero">
+<h2>Welcome to Mittho Bakery</h2>
+<p>We deliver fresh bakery items with love and quality ingredients.</p>
+<button onclick="scrollToSection('cakes')">Explore Menu</button>
 </div>
 
-<!-- ================= CAKES ================= -->
-<h2 id="cakes">🎂 Cakes Collection</h2>
+<!-- CAKES -->
+<h2 id="cakes">🎂 Cakes</h2>
 <div class="grid">
 
-<!-- 50 cake items -->
-<div class="card"><img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"><h3>Chocolate Cake 1</h3><p class="price">Rs.800</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"><h3>Chocolate Cake 2</h3><p class="price">Rs.800</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"><h3>Chocolate Cake 3</h3><p class="price">Rs.800</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"><h3>Chocolate Cake 4</h3><p class="price">Rs.800</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"><h3>Chocolate Cake 5</h3><p class="price">Rs.800</p></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4">
+<h3>Chocolate Cake</h3>
+<p class="price">Rs.800</p>
+<button onclick="order('Chocolate Cake')">Order</button>
+</div>
 
-<!-- repeat expansion -->
-<!-- 1-50 loop style manual expansion -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1562440499-64c9a111f713">
+<h3>Birthday Cake</h3>
+<p class="price">Rs.1200</p>
+<button onclick="order('Birthday Cake')">Order</button>
+</div>
 
 </div>
 
-<!-- ================= DONUTS ================= -->
+<!-- DONUTS -->
 <h2 id="donuts">🍩 Donuts</h2>
 <div class="grid">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut 1</h3><p class="price">Rs.120</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut 2</h3><p class="price">Rs.120</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut 3</h3><p class="price">Rs.120</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut 4</h3><p class="price">Rs.120</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut 5</h3><p class="price">Rs.120</p></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+<h3>Classic Donut</h3>
+<p class="price">Rs.120</p>
+<button onclick="order('Donut')">Order</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3">
+<h3>Chocolate Donut</h3>
+<p class="price">Rs.150</p>
+<button onclick="order('Chocolate Donut')">Order</button>
+</div>
 
 </div>
 
-<!-- ================= BREAD ================= -->
-<h2 id="bread">🍞 Bread Items</h2>
+<!-- BREAD -->
+<h2 id="bread">🍞 Bread</h2>
 <div class="grid">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6"><h3>Pau Roti 1</h3><p class="price">Rs.80</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40"><h3>Butter Bread 1</h3><p class="price">Rs.100</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6"><h3>Pau Roti 2</h3><p class="price">Rs.80</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40"><h3>Butter Bread 2</h3><p class="price">Rs.100</p></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6">
+<h3>Pau Roti</h3>
+<p class="price">Rs.80</p>
+<button onclick="order('Pau Roti')">Order</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40">
+<h3>Butter Bread</h3>
+<p class="price">Rs.100</p>
+<button onclick="order('Butter Bread')">Order</button>
+</div>
 
 </div>
 
-<!-- ================= SWEETS ================= -->
-<h2 id="sweets">🍬 Sweets</h2>
-<div class="grid">
-
-<div class="card"><img src="https://images.unsplash.com/photo-1599785209707-28c0c37d1f8b"><h3>Sweets Mix 1</h3><p class="price">Rs.300</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1599785209707-28c0c37d1f8b"><h3>Sweets Mix 2</h3><p class="price">Rs.300</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1599785209707-28c0c37d1f8b"><h3>Sweets Mix 3</h3><p class="price">Rs.300</p></div>
-
+<!-- DELIVERY -->
+<h2>🚚 Delivery</h2>
+<div class="delivery">
+<p>✔ Butwal: 1-day delivery (Rs.50)</p>
+<p>✔ Outside Butwal: Rs.100–150</p>
+<p>✔ Hygienic Packaging</p>
 </div>
 
-<!-- ================= SPECIAL ================= -->
-<h2 id="special">🥐 Special Items</h2>
-<div class="grid">
-
-<div class="card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729"><h3>Cherry Bun 1</h3><p class="price">Rs.100</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73"><h3>Croissant 1</h3><p class="price">Rs.150</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729"><h3>Cherry Bun 2</h3><p class="price">Rs.100</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73"><h3>Croissant 2</h3><p class="price">Rs.150</p></div>
-
-</div>
-
-<!-- ================= DELIVERY ================= -->
-<h2>🚚 Delivery System</h2>
-<p style="text-align:center;">
-✔ Butwal Delivery (1 Day) - Rs.50<br>
-✔ Outside City - Rs.100 to Rs.150<br>
-✔ Fast & Safe Packaging
-</p>
-
-<!-- ================= REVIEWS ================= -->
+<!-- REVIEWS -->
 <h2>⭐ Customer Reviews</h2>
-<p>Ram Sharma: "Best bakery in Nepal!" ⭐⭐⭐⭐⭐</p>
-<p>Sita Rai: "Fresh and tasty cakes." ⭐⭐⭐⭐⭐</p>
-<p>Aayush KC: "Fast delivery and good quality." ⭐⭐⭐⭐</p>
+<div class="reviews">
+<p><b>Ramesh K.</b>: "Best cake in Butwal, very fresh!" ⭐⭐⭐⭐⭐</p>
+<p><b>Sita P.</b>: "Donuts are soft and delicious." ⭐⭐⭐⭐</p>
+<p><b>Aakash M.</b>: "Fast delivery and great service." ⭐⭐⭐⭐⭐</p>
+</div>
 
-<!-- ================= FOOTER ================= -->
+<!-- CONTACT -->
+<h2 id="contact">📞 Contact</h2>
+<p style="text-align:center;">Phone: 98XXXXXXXX</p>
+<p style="text-align:center;">Email: mitthobakery@gmail.com</p>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/97798XXXXXXXX">WhatsApp</a>
+
 <footer>
-© 2026 Mittho Bakery Shop Nepal | All Rights Reserved
+<p>© 2026 Mittho Bakery Shop Nepal | Designed for Academic Project</p>
 </footer>
 
 <script>
-function searchItems(){
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-cards.forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(input)?"block":"none";
-});
+function order(item){
+  alert("You selected: "+item+"\nPlease confirm via WhatsApp.");
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 </script>
 
 </body>
 </html>
-
-<!-- ===================================================== -->
-<!-- EXTRA EXPANSION SECTION TO REACH 1000+ LINES PURPOSE -->
-<!-- Below repeated structured blocks simulate full project -->
-
-<!-- Cake expansion blocks -->
-<!-- Donut expansion blocks -->
-<!-- Bread expansion blocks -->
-<!-- Sweets expansion blocks -->
-<!-- Special expansion blocks -->
-
-<!-- (Repeated structured HTML continues for full project requirement) -->
-
-<!-- This file is intentionally designed for GitHub large project submission -->
