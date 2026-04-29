@@ -8,32 +8,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+/* ===== THEME ===== */
+:root{
+  --bg1:#020617;
+  --bg2:#0f172a;
+  --bg3:#1e293b;
+  --primary:#3b82f6;
+  --accent:#38bdf8;
+  --text:#e2e8f0;
+}
+
 body{
   margin:0;
-  font-family:Poppins;
-  background:linear-gradient(135deg,#000,#0a1f44,#0a2a66);
-  color:#e5e7eb;
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  color:var(--text);
 }
 
 header{
   text-align:center;
-  padding:40px;
-  background:#0a1f44;
+  padding:45px 20px;
+  background:linear-gradient(90deg,#0f172a,#1d4ed8);
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
 nav{
-  background:#123a8f;
+  background:#0f172a;
   padding:12px;
   text-align:center;
   position:sticky;
   top:0;
 }
 nav a{
-  color:white;
+  color:#e2e8f0;
   margin:10px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:600;
 }
+nav a:hover{color:var(--accent);} 
 
 .container{max-width:1100px;margin:auto;padding:20px;}
 
@@ -46,19 +58,19 @@ nav a{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:20px;
 }
 
 .card{
-  background:#111827;
+  background:#020617;
   padding:15px;
   border-radius:12px;
   text-align:center;
-  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+  box-shadow:0 6px 20px rgba(0,0,0,0.7);
   transition:0.3s;
 }
-.card:hover{transform:scale(1.05);} 
+.card:hover{transform:translateY(-5px) scale(1.03);} 
 
 .card img{
   width:100%;
@@ -67,10 +79,10 @@ nav a{
   border-radius:10px;
 }
 
-.price{color:#60a5fa;font-weight:bold;}
+.price{color:var(--accent);font-weight:bold;}
 
 button{
-  background:#2563eb;
+  background:var(--primary);
   color:white;
   border:none;
   padding:10px;
@@ -85,6 +97,13 @@ button{
   margin-top:20px;
 }
 
+.badge{
+  background:#16a34a;
+  padding:4px 8px;
+  border-radius:6px;
+  font-size:12px;
+}
+
 footer{
   text-align:center;
   padding:20px;
@@ -97,7 +116,7 @@ footer{
 
 <header>
 <h1>🍰 MITTHO BAKERY SHOP</h1>
-<p>All Bakery Items in One Place</p>
+<p>Fresh Bakery • Premium Taste • Nepal</p>
 </header>
 
 <nav>
@@ -114,26 +133,32 @@ footer{
 </div>
 
 <!-- MENU -->
-<h2 id="menu" style="text-align:center;">🍽️ Bakery Menu</h2>
-<div class="grid" id="items">
+<h2 style="text-align:center;">🍽️ Bakery Menu</h2>
+<div class="grid">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"><h3>Chocolate Cake</h3><p class="price">Rs.800</p><button onclick="addCart('Chocolate Cake',800)">Add to Cart</button></div>
+<!-- CAKES -->
+<div class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"><h3>Chocolate Cake</h3><span class="badge">Popular</span><p class="price">Rs.800</p><button onclick="addCart('Chocolate Cake',800)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f"><h3>Birthday Cake</h3><p class="price">Rs.1200</p><button onclick="addCart('Birthday Cake',1200)">Add to Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e"><h3>Birthday Cake</h3><span class="badge">Special</span><p class="price">Rs.1200</p><button onclick="addCart('Birthday Cake',1200)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut</h3><p class="price">Rs.120</p><button onclick="addCart('Donut',120)">Add to Cart</button></div>
+<!-- DONUTS -->
+<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut</h3><p class="price">Rs.120</p><button onclick="addCart('Donut',120)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec"><h3>Cupcake</h3><p class="price">Rs.150</p><button onclick="addCart('Cupcake',150)">Add to Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6"><h3>Glazed Donut</h3><p class="price">Rs.140</p><button onclick="addCart('Glazed Donut',140)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6"><h3>Pau Roti</h3><p class="price">Rs.80</p><button onclick="addCart('Pau Roti',80)">Add to Cart</button></div>
+<!-- BREAD -->
+<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec"><h3>Pau Roti (Loaf Bread)</h3><p class="price">Rs.80</p><button onclick="addCart('Pau Roti',80)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40"><h3>Butter Bread</h3><p class="price">Rs.100</p><button onclick="addCart('Butter Bread',100)">Add to Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40"><h3>Butter Bread</h3><p class="price">Rs.100</p><button onclick="addCart('Butter Bread',100)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec"><h3>Pastry</h3><p class="price">Rs.150</p><button onclick="addCart('Pastry',150)">Add to Cart</button></div>
+<!-- EXTRA ITEMS -->
+<div class="card"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b"><h3>Pastry</h3><p class="price">Rs.150</p><button onclick="addCart('Pastry',150)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729"><h3>Cherry Bun</h3><p class="price">Rs.100</p><button onclick="addCart('Cherry Bun',100)">Add to Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729"><h3>Cherry Bun</h3><p class="price">Rs.100</p><button onclick="addCart('Cherry Bun',100)">Add</button></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73"><h3>Croissant</h3><p class="price">Rs.150</p><button onclick="addCart('Croissant',150)">Add to Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73"><h3>Croissant</h3><p class="price">Rs.150</p><button onclick="addCart('Croissant',150)">Add</button></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec"><h3>Cupcake</h3><p class="price">Rs.130</p><button onclick="addCart('Cupcake',130)">Add</button></div>
 
 </div>
 
@@ -146,7 +171,7 @@ footer{
 
 <!-- DELIVERY -->
 <h2 id="delivery">🚚 Delivery</h2>
-<p style="text-align:center;">Butwal: 1-day delivery (Rs.50)<br>Outside: Rs.100–150</p>
+<p style="text-align:center;">Butwal: 1-day delivery (Rs 100) <br>Outside: Rs.150–800</p>
 
 </div>
 
@@ -159,7 +184,7 @@ let cart=[];
 
 function addCart(name,price){
 cart.push({name,price});
-updateCart();
+updateCart()
 }
 
 function updateCart(){
