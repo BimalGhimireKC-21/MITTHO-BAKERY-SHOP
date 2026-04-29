@@ -5,38 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mittho Bakery Shop Nepal</title>
 
-<meta name="description" content="Mittho Bakery Shop Nepal - Fresh cakes, donuts, bread with delivery in Butwal">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#0b1220,#1e3a8a);
+  font-family:Poppins;
+  background:linear-gradient(135deg,#000,#0a1f44,#0a2a66);
   color:#e5e7eb;
 }
 
 header{
   text-align:center;
-  padding:50px 20px;
-  background:linear-gradient(90deg,#1e3a8a,#2563eb);
-}
-
-header h1{
-  margin:0;
-  font-size:40px;
-}
-
-header p{
-  margin-top:10px;
-  opacity:0.9;
+  padding:40px;
+  background:#0a1f44;
 }
 
 nav{
-  text-align:center;
+  background:#123a8f;
   padding:12px;
-  background:#1e40af;
+  text-align:center;
   position:sticky;
   top:0;
 }
@@ -46,20 +34,14 @@ nav a{
   text-decoration:none;
   font-weight:bold;
 }
-nav a:hover{
-  text-decoration:underline;
-}
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
+.container{max-width:1100px;margin:auto;padding:20px;}
 
-h2{
-  text-align:center;
-  color:#93c5fd;
-  margin-top:40px;
+.search input{
+  width:60%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
 }
 
 .grid{
@@ -76,9 +58,7 @@ h2{
   box-shadow:0 6px 20px rgba(0,0,0,0.6);
   transition:0.3s;
 }
-.card:hover{
-  transform:scale(1.05);
-}
+.card:hover{transform:scale(1.05);} 
 
 .card img{
   width:100%;
@@ -87,10 +67,7 @@ h2{
   border-radius:10px;
 }
 
-.price{
-  color:#60a5fa;
-  font-weight:bold;
-}
+.price{color:#60a5fa;font-weight:bold;}
 
 button{
   background:#2563eb;
@@ -100,22 +77,10 @@ button{
   border-radius:6px;
   cursor:pointer;
 }
-button:hover{
-  background:#1d4ed8;
-}
 
-.hero{
-  text-align:center;
-  margin-top:20px;
-}
-.hero button{
-  margin-top:10px;
-}
-
-.delivery, .reviews{
-  text-align:center;
-  background:#0f172a;
-  padding:20px;
+.cart-box{
+  background:#020617;
+  padding:15px;
   border-radius:10px;
   margin-top:20px;
 }
@@ -123,21 +88,8 @@ button:hover{
 footer{
   text-align:center;
   padding:20px;
-  background:#020617;
-  margin-top:40px;
+  background:#000;
 }
-
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:12px 15px;
-  border-radius:50px;
-  text-decoration:none;
-}
-
 </style>
 </head>
 
@@ -145,120 +97,93 @@ footer{
 
 <header>
 <h1>🍰 MITTHO BAKERY SHOP</h1>
-<p>Fresh • Delicious • Homemade Taste | Butwal, Nepal 🇳🇵</p>
+<p>All Bakery Items in One Place</p>
 </header>
 
 <nav>
-<a href="#cakes">Cakes</a>
-<a href="#donuts">Donuts</a>
-<a href="#bread">Bread</a>
-<a href="#contact">Contact</a>
+<a href="#menu">Menu</a>
+<a href="#cart">Cart</a>
+<a href="#delivery">Delivery</a>
 </nav>
 
 <div class="container">
 
-<div class="hero">
-<h2>Welcome to Mittho Bakery</h2>
-<p>We deliver fresh bakery items with love and quality ingredients.</p>
-<button onclick="scrollToSection('cakes')">Explore Menu</button>
+<!-- SEARCH -->
+<div class="search" style="text-align:center;margin-bottom:20px;">
+<input type="text" id="search" placeholder="Search bakery items..." onkeyup="searchItems()">
 </div>
 
-<!-- CAKES -->
-<h2 id="cakes">🎂 Cakes</h2>
-<div class="grid">
+<!-- MENU -->
+<h2 id="menu" style="text-align:center;">🍽️ Bakery Menu</h2>
+<div class="grid" id="items">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4">
-<h3>Chocolate Cake</h3>
-<p class="price">Rs.800</p>
-<button onclick="order('Chocolate Cake')">Order</button>
-</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"><h3>Chocolate Cake</h3><p class="price">Rs.800</p><button onclick="addCart('Chocolate Cake',800)">Add to Cart</button></div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1562440499-64c9a111f713">
-<h3>Birthday Cake</h3>
-<p class="price">Rs.1200</p>
-<button onclick="order('Birthday Cake')">Order</button>
-</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f"><h3>Birthday Cake</h3><p class="price">Rs.1200</p><button onclick="addCart('Birthday Cake',1200)">Add to Cart</button></div>
 
-</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><h3>Donut</h3><p class="price">Rs.120</p><button onclick="addCart('Donut',120)">Add to Cart</button></div>
 
-<!-- DONUTS -->
-<h2 id="donuts">🍩 Donuts</h2>
-<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec"><h3>Cupcake</h3><p class="price">Rs.150</p><button onclick="addCart('Cupcake',150)">Add to Cart</button></div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
-<h3>Classic Donut</h3>
-<p class="price">Rs.120</p>
-<button onclick="order('Donut')">Order</button>
-</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6"><h3>Pau Roti</h3><p class="price">Rs.80</p><button onclick="addCart('Pau Roti',80)">Add to Cart</button></div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3">
-<h3>Chocolate Donut</h3>
-<p class="price">Rs.150</p>
-<button onclick="order('Chocolate Donut')">Order</button>
-</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40"><h3>Butter Bread</h3><p class="price">Rs.100</p><button onclick="addCart('Butter Bread',100)">Add to Cart</button></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec"><h3>Pastry</h3><p class="price">Rs.150</p><button onclick="addCart('Pastry',150)">Add to Cart</button></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729"><h3>Cherry Bun</h3><p class="price">Rs.100</p><button onclick="addCart('Cherry Bun',100)">Add to Cart</button></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73"><h3>Croissant</h3><p class="price">Rs.150</p><button onclick="addCart('Croissant',150)">Add to Cart</button></div>
 
 </div>
 
-<!-- BREAD -->
-<h2 id="bread">🍞 Bread</h2>
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6">
-<h3>Pau Roti</h3>
-<p class="price">Rs.80</p>
-<button onclick="order('Pau Roti')">Order</button>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40">
-<h3>Butter Bread</h3>
-<p class="price">Rs.100</p>
-<button onclick="order('Butter Bread')">Order</button>
-</div>
-
+<!-- CART -->
+<h2 id="cart">🛒 Cart</h2>
+<div class="cart-box">
+<div id="cartItems"></div>
+<h3 id="total"></h3>
 </div>
 
 <!-- DELIVERY -->
-<h2>🚚 Delivery</h2>
-<div class="delivery">
-<p>✔ Butwal: 1-day delivery (Rs.50)</p>
-<p>✔ Outside Butwal: Rs.100–150</p>
-<p>✔ Hygienic Packaging</p>
-</div>
-
-<!-- REVIEWS -->
-<h2>⭐ Customer Reviews</h2>
-<div class="reviews">
-<p><b>Ramesh K.</b>: "Best cake in Butwal, very fresh!" ⭐⭐⭐⭐⭐</p>
-<p><b>Sita P.</b>: "Donuts are soft and delicious." ⭐⭐⭐⭐</p>
-<p><b>Aakash M.</b>: "Fast delivery and great service." ⭐⭐⭐⭐⭐</p>
-</div>
-
-<!-- CONTACT -->
-<h2 id="contact">📞 Contact</h2>
-<p style="text-align:center;">Phone: 98XXXXXXXX</p>
-<p style="text-align:center;">Email: mitthobakery@gmail.com</p>
+<h2 id="delivery">🚚 Delivery</h2>
+<p style="text-align:center;">Butwal: 1-day delivery (Rs.50)<br>Outside: Rs.100–150</p>
 
 </div>
-
-<a class="whatsapp" href="https://wa.me/97798XXXXXXXX">WhatsApp</a>
 
 <footer>
-<p>© 2026 Mittho Bakery Shop Nepal | Designed for Academic Project</p>
+<p>© 2026 Mittho Bakery Shop Nepal</p>
 </footer>
 
 <script>
-function order(item){
-  alert("You selected: "+item+"\nPlease confirm via WhatsApp.");
+let cart=[];
+
+function addCart(name,price){
+cart.push({name,price});
+updateCart();
 }
 
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+function updateCart(){
+let html="";
+let total=0;
+cart.forEach((item,i)=>{
+html+=item.name+" - Rs."+item.price+" <button onclick='removeItem("+i+")'>X</button><br>";
+total+=item.price;
+});
+document.getElementById("cartItems").innerHTML=html;
+document.getElementById("total").innerText="Total: Rs."+total;
+}
+
+function removeItem(i){
+cart.splice(i,1);
+updateCart();
+}
+
+function searchItems(){
+let val=document.getElementById("search").value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+cards.forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(val)?"block":"none";
+});
 }
 </script>
 
